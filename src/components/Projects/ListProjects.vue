@@ -41,7 +41,7 @@
         <tbody>
           <tr v-for="project in projects" :key="project.id">
             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
-            <router-link :to="`/dashboard/show-project/${project.id}`">{{ project.id }}</router-link>
+            <router-link :to="`/dashboard/projects/${project.id}`">{{ project.id }}</router-link>
             </td>
             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
               {{ project.title }}

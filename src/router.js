@@ -36,10 +36,29 @@ const routes =  [
       },
 
       {
-        path: "show-project/:id",
+        path: "projects/:id",
         name: "showProject",
         component: () => import("./components/Projects/ShowProject.vue"),
       },
+
+      {
+        path: "projects/:id/create-task",
+        name: "createTask",
+        component: () => import("./components/Tasks/CreateTask.vue"),
+      },
+
+      {
+        path: "projects/:projectId/tasks/:id",
+        name: "showTask",
+        component: () => import("./components/Tasks/ShowTask.vue"),
+      },
+
+      {
+        path : "projects/:projectId/tasks/:id/edit",
+        name : "editTask",
+        component : () => import("./components/Tasks/EditTask.vue"),
+      }
+      
     ],
   },
 ];
