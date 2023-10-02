@@ -4,18 +4,25 @@ const routes =  [
   {
     path: "/",
     name: "login",
-    component: () => import("./components/LoginForm.vue"),
+    component: () => import("./components/Auth/LoginForm.vue"),
   },
   {
     path: "/register",
     name: "register",
-    component: () => import("./components/RegisterForm.vue"),
+    component: () => import("./components/Auth/RegisterForm.vue"),
   },
   {
     path: "/dashboard",
     name: "dashboard",
     component: () => import("./components/DashboardLayout.vue"),
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true },
+    children: [
+      {
+        path : "projects",
+        name : "projects",
+        component : () => import("./components/Projects/ListProjects.vue"),
+      },
+    ],
   },
 ];
 

@@ -43,7 +43,7 @@
   </template>
   
   <script>
-  import AuthService from "../services/auth";
+  import AuthService from "@/services/auth";
   
   export default {
     name: "login-form",
