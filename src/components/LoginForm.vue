@@ -35,7 +35,6 @@
           </button>
         </div>
       </form>
-      <!-- Botón de registro -->
       <div class="text-center">
         <p class="text-gray-600">Don't have an account?</p>
         <router-link to="/register" class="text-blue-500 hover:underline">Register</router-link>
@@ -60,8 +59,10 @@
       loginUser() {
         AuthService.login(this.user)
           .then((response) => {
+            const token = response.data.token;
+            localStorage.setItem("token", token);
+            this.$router.push("/dashboard");
             console.log(response);
-            // Redirigir o realizar alguna acción después de iniciar sesión
           })
           .catch((error) => {
             console.error(error);

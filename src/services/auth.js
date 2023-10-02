@@ -10,8 +10,12 @@ class AuthService {
     }
 
   
-    logout(data) {
-        return http.post("/logout", data);
+    logout() {
+        return http.post("/logout");
+    }
+
+    getCurrentUser() {
+        return http.get("/user-profile");
     }
 
 }
